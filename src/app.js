@@ -28,7 +28,7 @@ app.post('/register', async (req, res) => {
     console.error(error);
   }
   console.log(users);
-  res.status(201).json(users);
+  res.status(201).json({data: users});
 });
 
 app.all('*', (req, res) => {

@@ -18,7 +18,8 @@ describe('Register', () => {
     const res = await await request(app)
       .post('/register')
       .send(user);
-    expect(res.body[0].name).toEqual(user.name);
-    expect(res.body[0].email).toEqual(user.email);
+    expect(res.body.error).toBeUndefined();
+    expect(res.body.data[0].name).toEqual(user.name);
+    expect(res.body.data[0].email).toEqual(user.email);
   });
 });
