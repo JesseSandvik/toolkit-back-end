@@ -1,5 +1,5 @@
-const server = require('../src/app');
 const request = require('supertest');
+const server = require('../src/app');
 
 describe('Server', () => {
   it('01. Renders "Hello World!" message', async () => {
