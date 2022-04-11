@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../src/app');
+const app = require('../../app');
 
 describe('Not Found', () => {
   it('01. Returns a 404 status and message for not found routes', async () => {
