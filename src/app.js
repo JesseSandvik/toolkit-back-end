@@ -6,8 +6,8 @@ const corsOptions = require('./config/corsOptions');
 
 const registerRouter = require('./register/register.router');
 
-const NotFound = require('./errors/notFound/NotFound');
-const errorHandler = require('./errors/errorHandler/ErrorHandler');
+const NotFound = require('./errors/notFound/notFound');
+const errorHandler = require('./errors/errorHandler/errorHandler');
 
 app.use(cors(corsOptions));
 app.use(express.urlencoded({extended: false}));
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/register', registerRouter);
 
-app.all('*', NotFound);
+app.use(NotFound);
 
 app.use(errorHandler);
 

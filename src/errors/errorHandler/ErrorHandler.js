@@ -1,6 +1,6 @@
-const errorHandler = (error, req, res, next) => {
-  console.error(error.stack);
-  res.status(500).send(error.message);
+const errorHandler = (error, request, response, next) => {
+  const {status = 500, message = 'Something went wrong!'} = error;
+  response.status(status).json({error: message});
 };
 
 module.exports = errorHandler;
