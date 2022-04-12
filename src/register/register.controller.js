@@ -1,23 +1,25 @@
 const bcrypt = require('bcrypt');
+const hasProperties = require('../middleware/hasProperties');
 
-const users = [];
+const VALID_PROPERTIES = ['name', 'email', 'password'];
+
+const users = require('../db/user');
+
+const hasOnlyValidProperties = hasProperties(VALID_PROPERTIES);
 
 const createNewUser = async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    users.push({
-      id: new Date().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPassword,
-    });
-  } catch (error) {
-    console.error(error);
-  }
-  console.log(users);
-  res.status(201).json({data: users});
+  const {email, name, password} = req.body.data;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const newUser = {
+    id: new Date().toString(),
+    name: name,
+    email: email,
+    password: hashedPassword,
+  };
+  await users.push(newUser);
+  res.status(201).json({data: newUser});
 };
 
 module.exports = {
-  createNewUser,
+  create: [hasOnlyValidProperties, createNewUser],
 };
