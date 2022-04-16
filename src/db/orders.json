@@ -1,0 +1,39 @@
+[
+    {
+        "type": "cake",
+        "requiredTotalTiers": 2,
+        "requiredTierSize": {
+            "length": "6 inches",
+            "width": "6 inches"
+        },
+        "flavor": "red velvet",
+        "frosting": "cream cheese",
+        "colors": ["black", "red", "white"],
+        "fondant": "",
+        "decorations": "tentacles and eyeballs",
+        "details": "just make it look like Cthulu please fren"
+    },
+    {
+        "type": "cupcakes",
+        "flavor": "funfetti",
+        "frosting": "sweet cream",
+        "colors": ["neon green", "grey"],
+        "fondant": "",
+        "decorations": "tentacles and eyeballs",
+        "details": "just make it look like Cthulu please fren"
+    },
+    {
+        "type": "cake",
+        "requiredTotalTiers": 4,
+        "requiredTierSize": {
+            "length": "6 inches",
+            "width": "12 inches"
+        },
+        "flavor": "red velvet",
+        "frosting": "cream cheese",
+        "colors": ["black", "red", "white"],
+        "fondant": "",
+        "decorations": "tentacles and eyeballs",
+        "details": "just make it look like Cthulu please fren"
+    }
+]

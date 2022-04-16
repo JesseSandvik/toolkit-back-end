@@ -1,0 +1,26 @@
+[
+    {
+        "total": 200,
+        "deposit": 100,
+        "depositDate": "2021-10-31",
+        "fee": 25,
+        "deliveryCharge": 15,
+        "remainingBalanceDueDate": "2021-12-10",
+    },
+    {
+        "total": 100,
+        "deposit": 50,
+        "depositDate": "2022-10-31",
+        "fee": 10,
+        "deliveryCharge": 15,
+        "remainingBalanceDueDate": "2022-12-10",
+    },
+    {
+        "total": 225,
+        "deposit": 150,
+        "depositDate": "2022-10-31",
+        "fee": 50,
+        "deliveryCharge": 15,
+        "remainingBalanceDueDate": "2022-12-10",
+    }
+]

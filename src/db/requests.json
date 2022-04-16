@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Stacy's Mom",
+        "email": "hasgotitgoingon@gmail.com",
+        "phone": "555-867-5309",
+        "deliveryDate": "2022-12-31",
+        "deliveryTime": "20:00:00",
+        "deliveryLocation": "Stacy's Mom's House",
+        "status": "pending",
+        "createdAt": "2022-10-10T08:30:32.326Z",
+        "updatedAt": "2022-10-10T08:30:32.326Z"
+    },
+    {
+        "name": "Stacy's Other Mom",
+        "email": "hasalsogotitgoingon@gmail.com",
+        "phone": "555-867-5310",
+        "deliveryDate": "2022-12-31",
+        "deliveryTime": "18:00:00",
+        "deliveryLocation": "Stacy's Mom's House",
+        "status": "booked",
+        "createdAt": "2022-10-10T08:30:32.326Z",
+        "updatedAt": "2022-10-10T08:30:32.326Z"
+    },
+    {
+        "name": "Stacy's Third Mom",
+        "email": "hasalsostillgotitgoingon@gmail.com",
+        "phone": "555-867-5311",
+        "deliveryDate": "2021-12-31",
+        "deliveryTime": "20:00:00",
+        "deliveryLocation": "Stacy's Mom's House",
+        "status": "complete",
+        "createdAt": "2021-10-10T08:30:32.326Z",
+        "updatedAt": "2021-10-10T08:30:32.326Z"
+    }
+]
