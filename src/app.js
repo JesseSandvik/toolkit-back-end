@@ -4,8 +4,8 @@ const app = express();
 
 const corsOptions = require('./config/corsOptions');
 
-const commitmentsRoutes = require('./commitments/commitments.router');
 const registerRouter = require('./register/register.router');
+const requestsRouter = require('./requests/requests.router');
 
 const NotFound = require('./errors/notFound/notFound');
 const errorHandler = require('./errors/errorHandler/errorHandler');
@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
   res.status(200).json({message: 'Hello World!'});
 });
 
-app.use('/commitments', commitmentsRoutes);
 app.use('/register', registerRouter);
+app.use('/requests', requestsRouter);
 
 app.use(NotFound);
 
