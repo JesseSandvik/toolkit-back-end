@@ -1,5 +1,5 @@
-const app = require('../app');
 const request = require('supertest');
+const app = require('../app');
 
 describe('Register', () => {
   it('01. POST request is successful', async () => {
