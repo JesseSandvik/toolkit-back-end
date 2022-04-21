@@ -1,6 +1,10 @@
-const requests = require('../db/requests.json');
+const hasProperties = require('../middleware/hasProperties');
 
 const VALID_PROPERTIES = ['name', 'email'];
+
+const requests = require('../db/requests.json');
+
+const hasOnlyValidProperties = hasProperties(VALID_PROPERTIES);
 
 const createRequest = (req, res) => {
     const { newRequest } = req.body.data;
@@ -13,6 +17,6 @@ const listRequests = (req, res) => {
 }
 
 module.exports = {
-    create: createRequest,
+    create: [hasOnlyValidProperties, createRequest],
     list: listRequests
 }
