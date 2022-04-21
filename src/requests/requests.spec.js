@@ -20,7 +20,8 @@ describe('Requests', () => {
     it('04. Returns a 400 if the name property is missing', async () => {
         const newRequest = {
             email: 'potterharry@hogwarts.com',
-            phone: 555-555-5555
+            phone: '555-555-5555',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -31,7 +32,8 @@ describe('Requests', () => {
         const newRequest = {
             name: '',
             email: 'potterharry@hogwarts.com',
-            phone: 555-555-5555
+            phone: '555-555-5555',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -41,7 +43,8 @@ describe('Requests', () => {
     it('05. Returns a 400 if the email property is missing', async () => {
         const newRequest = {
             name: 'harry potter',
-            phone: 555-555-5555
+            phone: '555-555-5555',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -52,7 +55,8 @@ describe('Requests', () => {
         const newRequest = {
             name: 'harry potter',
             email: '',
-            phone: 555-555-5555
+            phone: '555-555-5555',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -62,7 +66,8 @@ describe('Requests', () => {
     it('07. Returns a 400 if the phone property is missing', async () => {
         const newRequest = {
             name: 'harry potter',
-            email: 'potterharry@hogwarts.com'
+            email: 'potterharry@hogwarts.com',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -73,11 +78,35 @@ describe('Requests', () => {
         const newRequest = {
             name: 'harry potter',
             email: 'potterharry@hogwarts.com',
-            phone: ''
+            phone: '',
+            deliveryDate: '2022-12-31'
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
         expect(res.body.error).toContain('phone');
+        expect(res.status).toEqual(400);
+    });
+    it('09. Returns a 400 if the delivery date is missing', async () => {
+        const newRequest = {
+            name: 'harry potter',
+            email: 'potterharry@hogwarts.com',
+            phone: '555-555-5555',
+        };
+        const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
+        expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('deliveryDate');
+        expect(res.status).toEqual(400);
+    });
+    it('10. Returns a 400 if the delivery date is an empty string', async () => {
+        const newRequest = {
+            name: 'harry potter',
+            email: 'potterharry@hogwarts.com',
+            phone: '555-555-5555',
+            deliveryDate: ''
+        };
+        const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
+        expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('deliveryDate');
         expect(res.status).toEqual(400);
     });
 });
