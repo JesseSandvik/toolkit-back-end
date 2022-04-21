@@ -23,6 +23,7 @@ describe('Requests', () => {
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('name');
         expect(res.status).toEqual(400);
     });
     it('05. Returns a 400 if the name property is an empty string', async () => {
@@ -32,6 +33,7 @@ describe('Requests', () => {
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('name');
         expect(res.status).toEqual(400);
     });
     it('05. Returns a 400 if the email property is missing', async () => {
@@ -40,6 +42,7 @@ describe('Requests', () => {
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('email');
         expect(res.status).toEqual(400);
     });
     it('06. Returns a 400 if the email property is an empty string', async () => {
@@ -49,6 +52,7 @@ describe('Requests', () => {
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('email');
         expect(res.status).toEqual(400);
     });
 });
