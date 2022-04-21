@@ -34,7 +34,7 @@ describe('Register', () => {
       .set('Accept', 'application/json')
       .send({data: {}});
     expect(res.body.error).toBeDefined();
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('04. Returns 400 if name is missing', async () => {
     const user = {
@@ -47,7 +47,7 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('name');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('05. Returns 400 if name is empty', async () => {
     const user = {
@@ -61,7 +61,7 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('name');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('06. Returns 400 if email is missing', async () => {
     const user = {
@@ -74,7 +74,7 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('email');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('07. Returns 400 if email is empty', async () => {
     const user = {
@@ -88,7 +88,7 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('email');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('08. Returns 400 if password is missing', async () => {
     const user = {
@@ -101,7 +101,7 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('password');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
   it('09. Returns 400 if password is empty', async () => {
     const user = {
@@ -115,6 +115,6 @@ describe('Register', () => {
       .send({data: user});
     expect(res.body.error).toBeDefined();
     expect(res.body.error).toContain('password');
-    expect(res.status).toBe(400);
+    expect(res.status).toEqual(400);
   });
 });
