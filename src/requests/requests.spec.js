@@ -27,4 +27,9 @@ describe('Requests', () => {
         expect(res.body.error).toBeDefined();
         expect(res.status).toEqual(400);
     });
+    it('05. Returns a 400 if the email property is missing', async () => {
+        const res = await request(app).post('/requests/new').set('Accept', 'application/json');
+        expect(res.body.error).toBeDefined();
+        expect(res.status).toEqual(400);
+    });
 });
