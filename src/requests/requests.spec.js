@@ -19,7 +19,8 @@ describe('Requests', () => {
     });
     it('04. Returns a 400 if the name property is missing', async () => {
         const newRequest = {
-            email: 'potterharry@hogwarts.com'
+            email: 'potterharry@hogwarts.com',
+            phone: 555-555-5555
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -29,7 +30,8 @@ describe('Requests', () => {
     it('05. Returns a 400 if the name property is an empty string', async () => {
         const newRequest = {
             name: '',
-            email: 'potterharry@hogwarts.com'
+            email: 'potterharry@hogwarts.com',
+            phone: 555-555-5555
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -39,6 +41,7 @@ describe('Requests', () => {
     it('05. Returns a 400 if the email property is missing', async () => {
         const newRequest = {
             name: 'harry potter',
+            phone: 555-555-5555
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
@@ -48,11 +51,33 @@ describe('Requests', () => {
     it('06. Returns a 400 if the email property is an empty string', async () => {
         const newRequest = {
             name: 'harry potter',
-            email: ''
+            email: '',
+            phone: 555-555-5555
         };
         const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
         expect(res.body.error).toBeDefined();
         expect(res.body.error).toContain('email');
+        expect(res.status).toEqual(400);
+    });
+    it('07. Returns a 400 if the phone property is missing', async () => {
+        const newRequest = {
+            name: 'harry potter',
+            email: 'potterharry@hogwarts.com'
+        };
+        const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
+        expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('phone');
+        expect(res.status).toEqual(400);
+    });
+    it('08. Returns a 400 if the phone property is an empty string', async () => {
+        const newRequest = {
+            name: 'harry potter',
+            email: 'potterharry@hogwarts.com',
+            phone: ''
+        };
+        const res = await request(app).post('/requests/new').set('Accept', 'application/json').send({data: newRequest});
+        expect(res.body.error).toBeDefined();
+        expect(res.body.error).toContain('phone');
         expect(res.status).toEqual(400);
     });
 });
