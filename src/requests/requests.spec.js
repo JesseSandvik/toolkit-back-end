@@ -140,4 +140,35 @@ describe('Requests', () => {
     expect(res.body.error).toContain('deliveryDate');
     expect(res.status).toEqual(400);
   });
+  it('11. Returns a 400 if the delivery time is missing', async () => {
+    const newRequest = {
+      name: 'harry potter',
+      email: 'potterharry@hogwarts.com',
+      phone: '555-555-5555',
+      deliveryDate: '2022-12-31',
+    };
+    const res = await request(app)
+      .post('/requests/new')
+      .set('Accept', 'application/json')
+      .send({data: newRequest});
+    expect(res.body.error).toBeDefined();
+    expect(res.body.error).toContain('deliveryTime');
+    expect(res.status).toEqual(400);
+  });
+  it('12. Returns a 400 if the delivery time is an empty string', async () => {
+    const newRequest = {
+      name: 'harry potter',
+      email: 'potterharry@hogwarts.com',
+      phone: '555-555-5555',
+      deliveryDate: '2022-12-31',
+      deliveryTime: '',
+    };
+    const res = await request(app)
+      .post('/requests/new')
+      .set('Accept', 'application/json')
+      .send({data: newRequest});
+    expect(res.body.error).toBeDefined();
+    expect(res.body.error).toContain('deliveryTime');
+    expect(res.status).toEqual(400);
+  });
 });
