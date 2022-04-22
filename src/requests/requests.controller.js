@@ -7,16 +7,16 @@ const requests = require('../db/requests.json');
 const hasOnlyValidProperties = hasProperties(VALID_PROPERTIES);
 
 const createRequest = (req, res) => {
-    const { newRequest } = req.body.data;
-    const updatedRequests = [...requests, newRequest];
-    res.status(201).json({ data: updatedRequests })
-}
+  const {newRequest} = req.body.data;
+  const updatedRequests = [...requests, newRequest];
+  res.status(201).json({data: updatedRequests});
+};
 
 const listRequests = (req, res) => {
-    res.status(200).json({ data: requests });
-}
+  res.status(200).json({data: requests});
+};
 
 module.exports = {
-    create: [hasOnlyValidProperties, createRequest],
-    list: listRequests
-}
+  create: [hasOnlyValidProperties, createRequest],
+  list: listRequests,
+};

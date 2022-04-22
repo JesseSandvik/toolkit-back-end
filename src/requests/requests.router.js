@@ -4,13 +4,13 @@ const controller = require('./requests.controller');
 const methodNotAllowed = require('../errors/methodNotAllowed/methodNotAllowed');
 
 router
-    .route('/')
-    .get(controller.list)
-    .all(methodNotAllowed);
+  .route('/')
+  .get(controller.list)
+  .all(methodNotAllowed);
 
 router
-    .route('/new')
-    .post(controller.create)
-    .all(methodNotAllowed);
+  .route('/new')
+  .post(controller.create)
+  .all(methodNotAllowed);
 
-    module.exports = router;
+module.exports = router;
