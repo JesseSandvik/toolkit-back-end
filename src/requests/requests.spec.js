@@ -53,7 +53,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('name');
     expect(res.status).toEqual(400);
   });
-  it('05. Returns a 400 if the email property is missing', async () => {
+  it('06. Returns a 400 if the email property is missing', async () => {
     const newRequest = {
       name: 'harry potter',
       phone: '555-555-5555',
@@ -67,7 +67,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('email');
     expect(res.status).toEqual(400);
   });
-  it('06. Returns a 400 if the email property is an empty string', async () => {
+  it('07. Returns a 400 if the email property is an empty string', async () => {
     const newRequest = {
       name: 'harry potter',
       email: '',
@@ -82,7 +82,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('email');
     expect(res.status).toEqual(400);
   });
-  it('07. Returns a 400 if the phone property is missing', async () => {
+  it('08. Returns a 400 if the phone property is missing', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
@@ -96,7 +96,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('phone');
     expect(res.status).toEqual(400);
   });
-  it('08. Returns a 400 if the phone property is an empty string', async () => {
+  it('09. Returns a 400 if the phone property is an empty string', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
@@ -111,7 +111,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('phone');
     expect(res.status).toEqual(400);
   });
-  it('09. Returns a 400 if the delivery date is missing', async () => {
+  it('10. Returns a 400 if the delivery date is missing', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
@@ -125,7 +125,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('deliveryDate');
     expect(res.status).toEqual(400);
   });
-  it('10. Returns a 400 if the delivery date is an empty string', async () => {
+  it('11. Returns a 400 if the delivery date is an empty string', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
@@ -140,7 +140,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('deliveryDate');
     expect(res.status).toEqual(400);
   });
-  it('11. Returns a 400 if the delivery time is missing', async () => {
+  it('12. Returns a 400 if the delivery time is missing', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
@@ -155,7 +155,7 @@ describe('Requests', () => {
     expect(res.body.error).toContain('deliveryTime');
     expect(res.status).toEqual(400);
   });
-  it('12. Returns a 400 if the delivery time is an empty string', async () => {
+  it('13. Returns a 400 if the delivery time is an empty string', async () => {
     const newRequest = {
       name: 'harry potter',
       email: 'potterharry@hogwarts.com',
