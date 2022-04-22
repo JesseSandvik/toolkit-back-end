@@ -1,6 +1,6 @@
 const hasProperties = require('../middleware/hasProperties');
 
-const VALID_PROPERTIES = ['name', 'email', 'phone', 'deliveryDate', 'deliveryTime'];
+const VALID_PROPERTIES = ['name', 'email', 'phone', 'deliveryDate', 'deliveryTime', 'status'];
 
 const requests = require('../db/requests.json');
 
