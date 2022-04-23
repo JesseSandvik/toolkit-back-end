@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../app');
 
 describe('Register', () => {
-  it('01. POST request is successful', async () => {
+  it('01. Return a 201 status for successful POST request', async () => {
     const user = {
       name: 'Harry Potter',
       email: 'hpotter@hogwarts.com',
@@ -14,6 +14,7 @@ describe('Register', () => {
     expect(res.body.error).toBeUndefined();
     expect(res.status).toEqual(201);
     expect(res.type).toEqual(expect.stringContaining('json'));
+    expect(res.body.data).toEqual(expect.objectContaining({name: user.name, email: user.email}));
   });
   it('02. Registered user data matches POST request', async () => {
     const user = {

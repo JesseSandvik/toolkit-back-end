@@ -7,8 +7,8 @@ const requests = require('../db/requests.json');
 const hasOnlyValidProperties = hasProperties(VALID_PROPERTIES);
 
 const createRequest = (req, res) => {
-  const {newRequest} = req.body.data;
-  const updatedRequests = [...requests, newRequest];
+  const {data} = req.body;
+  const updatedRequests = [...requests, data];
   res.status(201).json({data: updatedRequests});
 };
 
