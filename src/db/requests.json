@@ -6,9 +6,7 @@
         "deliveryDate": "2022-12-31",
         "deliveryTime": "20:00:00",
         "deliveryLocation": "Stacy's Mom's House",
-        "status": "pending",
-        "createdAt": "2022-10-10T08:30:32.326Z",
-        "updatedAt": "2022-10-10T08:30:32.326Z"
+        "status": "pending"
     },
     {
         "name": "Stacy's Other Mom",
@@ -17,9 +15,7 @@
         "deliveryDate": "2022-12-31",
         "deliveryTime": "18:00:00",
         "deliveryLocation": "Stacy's Mom's House",
-        "status": "booked",
-        "createdAt": "2022-10-10T08:30:32.326Z",
-        "updatedAt": "2022-10-10T08:30:32.326Z"
+        "status": "booked"
     },
     {
         "name": "Stacy's Third Mom",
@@ -28,8 +24,6 @@
         "deliveryDate": "2021-12-31",
         "deliveryTime": "20:00:00",
         "deliveryLocation": "Stacy's Mom's House",
-        "status": "complete",
-        "createdAt": "2021-10-10T08:30:32.326Z",
-        "updatedAt": "2021-10-10T08:30:32.326Z"
+        "status": "complete"
     }
 ]
